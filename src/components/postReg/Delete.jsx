@@ -19,10 +19,17 @@ function Delete({i}){
 
 
 
+
+      
     return (
         <>
             <div>
-            <span className="material-icons outlined" onClick={()=>{onHandelDelete(postAll[i].pid)}}>
+            <span className="material-icons outlined" onClick={()=>{
+                    if (window.confirm("정말 삭제합니까?")) {
+                        onHandelDelete(postAll[i].pid)
+                      } else {
+                        alert('취소')
+                      }}}>
                 delete
             </span>
             </div>

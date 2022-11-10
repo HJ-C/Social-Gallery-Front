@@ -2,8 +2,6 @@ import axios from "axios";
 
 function CommentDel({a}){
 
-
-
 const headers = {
     'Content-type': 'application/json',
     'Authorization': "Bearer " + localStorage.getItem("token")
@@ -16,7 +14,6 @@ const deleteComment = (cid)=>{
       credentials: "include"})
     .then(res=>{
         window.location.reload()
-        console.log(cid)
     })
     .catch(()=>{
         console.log('실패',cid) 
@@ -25,7 +22,12 @@ const deleteComment = (cid)=>{
 
     return (
         <>
-            <button onClick={()=>{deleteComment(a.cid)}}>X</button>
+            <button onClick={()=>{
+                    if (window.confirm("정말 삭제합니까?")) {
+                        deleteComment(a.cid)
+                      } else {
+                        alert('취소 됐습니다.')
+                      }}}>X</button>
         </>
     )
 }
