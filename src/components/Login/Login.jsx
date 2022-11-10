@@ -19,6 +19,7 @@ function Login() {
   const [rgTel, setRgTel] = useState('');
 
 
+
   // const [id,setId] = useState('') id 불러오기
   let usersId = useState('');
 
@@ -59,9 +60,11 @@ function Login() {
     }).then(res => {
       usersId = res.data.data.id;
       localStorage.setItem("uid", usersId);
+      
       return usersId;
     })
   }
+
   const signIn = () =>{
     axios.post(base_url + '/v1/login',{
       usersId : getUser(email),
@@ -77,7 +80,6 @@ function Login() {
     })
         .then(res => {
           if(res.status === 200){
-            console.log(res.data) 
             accessToken = res.data.data.accessToken
             localStorage.setItem("user", email)
             localStorage.setItem("token", res.data.data.accessToken)
