@@ -20,7 +20,7 @@ function Sidebar(){
 
     const getUid = () => {
             uid = localStorage.getItem('uid')
-        setUid(uid)
+            setUid(uid)
         return uid
     }
 

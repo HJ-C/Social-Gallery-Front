@@ -7,6 +7,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { setPostAll, setReply } from '../../store/Store';
 import Edit from "../postReg/Edit";
 import CommentDel from "./CommentDel";
+import { fetchIsLogin } from './../../store/Store';
 
 
 function Content({i}){
@@ -16,9 +17,7 @@ function Content({i}){
     // 빈 댓글 
     const [commentArray, setCommentArray] = useState([])
     let [users, setUsers] = useState([]);
-    const[post,setPost] = useState([])
    
-
 
     // base_URL
     const base_URL = "http://localhost:8080"
@@ -27,15 +26,10 @@ function Content({i}){
     let postAll= useSelector((state)=>state.postAll.postAllList)    
     // 댓글 useSelector
     let reply = useSelector((state)=>state.reply.replyList)
+    // isLogin useSelector
+    let isLogin = useSelector((state)=>state.isLogin.isLoginList)
+
     let dispatch = useDispatch()
-
-
-    // MainImg, Reply dispatch
-    // useEffect(()=>{
-    //     dispatch(fetchReply())
-    // },[])
-    
-
 
     // 댓글
     const [comment, setComments] = useState([])
@@ -102,6 +96,12 @@ function Content({i}){
         })
     },[])
 
+
+    //isLogin
+    useEffect(()=>{
+        fetchIsLogin()
+    },[dispatch])
+
     return (
         <>
 
@@ -136,10 +136,8 @@ function Content({i}){
                                     </div>
                                 </div>
                                 <div className="post__content">
-                                    <div className="post__medias" >
-                                        <img src={`assets/Img/${postAll[i].filePath}`} 
-                                        
-                                        alt="" />
+                                    <div className="post__medias" >                                       
+                                        <img src={`assets/Img/${postAll[i].filePath}`} alt="" />                                   
                                     </div>
                                 </div>
                                 <div className="post__footer">
@@ -197,7 +195,9 @@ function Content({i}){
                                                 <button
                                                     className="post_comment_btn"
 																										onClick={()=>{
-																										window.location.reload('/')
+                                                                                                            isLogin === false 
+                                                                                                            ? alert('로그인을 해주세요.')
+                                                                                                            : window.location.reload('/')
 																									}}
                                                 >
                                                     <i className='bx bx-send' ></i>

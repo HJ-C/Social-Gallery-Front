@@ -1,4 +1,5 @@
 import { configureStore, createSlice} from '@reduxjs/toolkit';
+import { axios } from 'axios';
 
 // Reply Slice
 let reply  = createSlice({
@@ -11,19 +12,6 @@ let reply  = createSlice({
     },
 
 })
-// Reply payload
-// export const fetchReply = () => {
-//     return async(dispatch)=>{
-//         axios.get("http://localhost:8080/api/comment/all")
-//         .then((res) => {
-//           dispatch(setReply([...res.data.list]));
-//           console.log(reply)
-//         })
-//         .catch((err) => {
-//           console.log(err);
-//         });
-//     }
-//   };
 
 export const {setReply} = reply.actions;
 
@@ -51,6 +39,7 @@ let postAll  = createSlice({
 //       });
 //   }
 // };
+
 export const {setPostAll} = postAll.actions;
 
 
@@ -97,7 +86,31 @@ let searchImg  = createSlice({
 
 export const {setSearchImg} = searchImg.actions;
 
+// isLogin Slice
+let isLogin = createSlice({
+    name : 'isLogin',
+    initialState : {isLoginList :false},
+    reducers : {
+        setIsLogin : (state,action) =>{
+            state.isLoginList = action.payload
+        }
+    }
+})
 
+// isLogin fetch
+export const fetchIsLogin = () => {
+    return (dispatch)=>{
+        axios.get("'http://localhost:8080/findUserByEmail/" + localStorage.getItem("user"))
+        .then((res) => {
+          dispatch(setIsLogin(res.data.data.isLogin));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
+export const { setIsLogin }= isLogin.actions;
 
 //configureStore
 export default configureStore({
@@ -107,6 +120,7 @@ export default configureStore({
         postTitle : postTitle.reducer,
         postContent : postContent.reducer,
         searchImg : searchImg.reducer,
+        isLogin : isLogin.reducer,
     },
     // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   })

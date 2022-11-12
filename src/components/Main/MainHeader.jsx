@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setIsLogin } from "../../store/Store";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 function MainHeader(){
-    const [isLogin, setIsLogin] = useState(false)
+
+    const isLogin = useSelector((state)=>state.isLogin.isLoginList)
+    const dispatch = useDispatch()
 
     const base_URL = 'http://localhost:8080'
 
     useEffect(()=>{
         axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
         .then((res)=>{
-            setIsLogin(res.data.data.isLogin)
+            dispatch(setIsLogin(res.data.data.isLogin))
         })
     },[])
 
@@ -26,8 +30,10 @@ function MainHeader(){
                     </div>
 
                     <div className="header__buttons header__buttons--desktop">
-                        <Link to="#">
-                            <img src="/assets/Main/home_btn.jpg" alt="" />
+                        <Link to="/"  onClick={()=>{
+                            window.location.href('/')
+                        }} >
+                            <img src="/assets/Main/home_btn.png" alt="" />
                         </Link>
                         <Link to="#">
                             <img src="/assets/Main/msg_btn.png" alt="" />
@@ -39,7 +45,7 @@ function MainHeader(){
                             <div className="profile-button img">
                             {
                                 isLogin === false 
-                                ? <Link to = "/login"><span class="material-icons outlined">
+                                ? <Link to = "/login"><span className="material-icons outlined">
                                 login</span></Link>
                                 :<img src="/assets/main/user.png" alt="User Picture" />
                             }
