@@ -35,6 +35,7 @@ function Sidebar(){
                     localStorage.removeItem('uid')
                     navigate('/')
                     alert('로그아웃 됐습니다.')
+                    window.location.reload()
                 }
             })
     }

@@ -39,7 +39,8 @@ function MainHeader(){
                             <div className="profile-button img">
                             {
                                 isLogin === false 
-                                ? <Link to = "/login"><div>로그인해주세요</div></Link>
+                                ? <Link to = "/login"><span class="material-icons outlined">
+                                login</span></Link>
                                 :<img src="/assets/main/user.png" alt="User Picture" />
                             }
                             </div>

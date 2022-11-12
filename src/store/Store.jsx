@@ -1,5 +1,4 @@
 import { configureStore, createSlice} from '@reduxjs/toolkit';
-import axios from 'axios';
 
 // Reply Slice
 let reply  = createSlice({
@@ -28,7 +27,7 @@ let reply  = createSlice({
 
 export const {setReply} = reply.actions;
 
-// mainImg Slice
+// postAll Slice
 let postAll  = createSlice({
   name : 'postAll',
   initialState : {postAllList:[]},

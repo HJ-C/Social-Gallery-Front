@@ -18,8 +18,6 @@ function Delete({i}){
     }
 
 
-
-
       
     return (
         <>
@@ -28,7 +26,7 @@ function Delete({i}){
                     if (window.confirm("정말 삭제합니까?")) {
                         onHandelDelete(postAll[i].pid)
                       } else {
-                        alert('취소')
+                        alert('취소 됐습니다.')
                       }}}>
                 delete
             </span>
