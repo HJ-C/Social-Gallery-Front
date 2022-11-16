@@ -37,7 +37,7 @@ function Delete({i}){
             <div>
             <span className="material-icons outlined" onClick={()=>{
                     if (isLogin === false) {
-                        alert('로그인 해주세요.')
+                        alert('로그인 후 사용해주세요.')
                         
                       } else if (window.confirm("정말 삭제합니까?")) {
                         onHandelDelete(postAll[i].pid)
