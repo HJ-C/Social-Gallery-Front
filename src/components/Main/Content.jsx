@@ -32,6 +32,14 @@ function Content({i}){
 
     let dispatch = useDispatch()
 
+    
+    // const userData = ()=>{
+    //     axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
+    //     .then(res=>{
+    //         dispatch(setUserData(res.data.data))
+    //     })
+    // }
+
     // 댓글
     const [comment, setComments] = useState([])
     
@@ -39,8 +47,7 @@ function Content({i}){
         e.preventDefault()
         setCommentArray(a=>[comment])
         setComments('')
-
-
+        
         const headers = {
             'Content-type': 'application/json',
             'Authorization': "Bearer " + localStorage.getItem("token")
@@ -60,13 +67,22 @@ function Content({i}){
         setComments(e.currentTarget.value)
     }
 
-    //User
+    // User
     useEffect(()=>{
         axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
             .then(res=>{
                 dispatch(setUserData(res.data.data))
             })
     },[])
+
+    const userDataAll = async ()=>{
+        await axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
+            .then(res=>{
+                dispatch(setUserData(res.data.data))
+        })
+    }
+
+
 
     // 카테고리별 페이지
     useEffect(() => {
@@ -93,10 +109,8 @@ function Content({i}){
         .then((res) => {
           dispatch(setReply([...res.data.list]));
         })
-        .catch((err) => {
-          console.log(err);
-        })
     },[])
+
 
 
     //isLogin
@@ -196,6 +210,7 @@ function Content({i}){
                                                     placeholder="댓글 달기..."
                                                     value={comment}
                                                     onChange={onHandleComment}
+                                                    onClick={userDataAll}
                                                 />
                                                 <button
                                                     className="post_comment_btn"

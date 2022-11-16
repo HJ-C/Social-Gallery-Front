@@ -13,10 +13,10 @@ import Travel from './components/sideMenu/Travel';
 
 
 function App() {
-    
 
     return (
         <div className="App">
+            
             <Routes>
                 {/* Main */}
                 <Route exact path="/" element={<Main ></Main>}></Route>

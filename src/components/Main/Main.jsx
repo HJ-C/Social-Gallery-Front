@@ -23,7 +23,7 @@ function Main({rgName,setRgName}){
     .catch((err) => {
       console.log(err);
     })
- },[])
+ },[dispatch])
 
     return (
         <>
