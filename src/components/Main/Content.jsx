@@ -4,7 +4,7 @@ import UpLoad from '../postReg/Upload';
 import {Link} from "react-router-dom";
 import Delete from "../postReg/Delete";
 import { useSelector,useDispatch } from "react-redux";
-import { setPostAll, setReply } from '../../store/Store';
+import { setPostAll, setReply, setUserData } from '../../store/Store';
 import Edit from "../postReg/Edit";
 import CommentDel from "./CommentDel";
 import { fetchIsLogin } from './../../store/Store';
@@ -16,7 +16,6 @@ function Content({i}){
     const [ previewImg, setPreviewImg ] = useState('')
     // 빈 댓글 
     const [commentArray, setCommentArray] = useState([])
-    let [users, setUsers] = useState([]);
    
 
     // base_URL
@@ -28,6 +27,8 @@ function Content({i}){
     let reply = useSelector((state)=>state.reply.replyList)
     // isLogin useSelector
     let isLogin = useSelector((state)=>state.isLogin.isLoginList)
+    // userData useSelector
+    let users = useSelector((state)=>state.userData.userDataList)
 
     let dispatch = useDispatch()
 
@@ -59,10 +60,11 @@ function Content({i}){
         setComments(e.currentTarget.value)
     }
 
+    //User
     useEffect(()=>{
         axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
             .then(res=>{
-                setUsers(res.data.data)
+                dispatch(setUserData(res.data.data))
             })
     },[])
 
@@ -101,6 +103,8 @@ function Content({i}){
     useEffect(()=>{
         fetchIsLogin()
     },[dispatch])
+
+    
 
     return (
         <>
@@ -174,7 +178,8 @@ function Content({i}){
                                                                 <em>{a.username}</em>
                                                                 &nbsp;&nbsp;:
                                                                 <span>{a.comment}</span>
-                                                                <CommentDel a={a}></CommentDel>
+                                                            
+                                                                <CommentDel a={a} i={i}></CommentDel>
                                                             </div>)
                                                     })																							
                                                 }

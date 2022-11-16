@@ -56,6 +56,7 @@ let postTitle  = createSlice({
 })
 export const {setPostTitle} = postTitle.actions;
 
+
 // Upload Post content Slice
 let postContent  = createSlice({
   name : 'postContent',
@@ -112,6 +113,18 @@ export const fetchIsLogin = () => {
 
 export const { setIsLogin }= isLogin.actions;
 
+//User Data
+let userData  = createSlice({
+    name : 'userData',
+    initialState : {userDataList:[]},
+    reducers:{
+        setUserData:(state,action)=>{
+            state.userDataList = action.payload
+        }
+    },
+  })
+export const {setUserData} = userData.actions;
+
 //configureStore
 export default configureStore({
     reducer: {
@@ -121,6 +134,7 @@ export default configureStore({
         postContent : postContent.reducer,
         searchImg : searchImg.reducer,
         isLogin : isLogin.reducer,
+        userData : userData.reducer,
     },
     // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   })

@@ -1,6 +1,14 @@
 import axios from "axios";
+import { useSelector } from "react-redux";
 
-function CommentDel({a}){
+
+function CommentDel({a,i}){
+
+    // 댓글 useSelector
+    let reply = useSelector((state)=>state.reply.replyList)
+    // userData useSelector
+    let users = useSelector((state)=>state.userData.userDataList)
+
 
 const headers = {
     'Content-type': 'application/json',
@@ -22,12 +30,19 @@ const deleteComment = (cid)=>{
 
     return (
         <>
-            <button onClick={()=>{
-                    if (window.confirm("정말 삭제합니까?")) {
+
+            {
+                users.id !== a.uid
+                ? <button> </button>
+                : <button onClick={ ()=>{
+                    if(window.confirm("정말 삭제합니까?")){
                         deleteComment(a.cid)
-                      } else {
+                    }else{
                         alert('취소 됐습니다.')
-                      }}}>X</button>
+                    }
+                }
+                }>X</button>
+            }
         </>
     )
 }
