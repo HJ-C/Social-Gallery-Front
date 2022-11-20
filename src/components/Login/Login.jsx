@@ -244,6 +244,10 @@ function Login() {
                 <span> Don't have an account? </span>
                 <b id="sign-up">&nbsp; Sign up here</b>
               </p>
+              <p>
+                <span>Consent to entrust handling of personal information</span>
+                <b id="sign-up">&nbsp; <Link to ="/login/privacy">Click here</Link></b>
+              </p>
             </div>
           </div>
 

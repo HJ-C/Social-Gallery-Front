@@ -661,6 +661,31 @@ body.dark .sidebar header .toggle{
     transition-timing-function: var(--tran-03);
 }
 
+/* userInfo */
+.layer{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+.layer::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.layer_content{
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    height: 300px;
+    background-color: #fff;
+}
+
 
 /* Media Queries */
 @media (max-width: 767px) {

@@ -11,6 +11,7 @@ import Broadcast from './components/sideMenu/Broadcast';
 import Life from './components/sideMenu/Life';
 import Travel from './components/sideMenu/Travel';
 import PrivacyPolicy from './components/Login/PrivacyPolicy';
+import UserInfo from './components/Main/UserInfo';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
                 <Route exact path="/" element={<Main ></Main>}></Route>
                 <Route path="/:pid" element={<Main></Main>}></Route>
                 <Route path="/upload" element={<UpLoad></UpLoad>}></Route>
+
+                {/* UserInfo */}
+                <Route exact path="/userinfo" element={<UserInfo></UserInfo>}></Route>
 
                 {/* Login */}
                 <Route path="/login/" element={<Login></Login>}></Route>
