@@ -26,7 +26,7 @@ function App() {
                 <Route path="/upload" element={<UpLoad></UpLoad>}></Route>
 
                 {/* UserInfo */}
-                <Route exact path="/userinfo" element={<UserInfo></UserInfo>}></Route>
+                {/* <Route exact path="/userinfo" element={<UserInfo></UserInfo>}></Route> */}
 
                 {/* Login */}
                 <Route path="/login/" element={<Login></Login>}></Route>

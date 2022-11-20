@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { setIsLogin } from "../../store/Store";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import UserInfo from './UserInfo';
 
 function MainHeader(){
 
@@ -19,10 +20,14 @@ function MainHeader(){
         })
     },[])
 
+    
+    
+    // userInfo
+
     return(
         <>
-            <header className="header">
-                <nav className="header__content">
+            <header className="header" >
+                <nav className="header__content" >
                     <div className="header__buttons">
                         <Link to ='/'><p onClick={()=>{
                             window.location.replace ('/')
@@ -42,12 +47,24 @@ function MainHeader(){
                             <img src="/assets/Main/video_btn.png" alt="" />
                         </Link>
                         <button className="profile-button" id ="ts">
-                            <div className="profile-button img">
+                            <div className="profile-button img" >
                             {
                                 isLogin === false 
                                 ? <Link to = "/login"><span className="material-icons outlined">
                                 login</span></Link>
-                                :<img src="/assets/main/user.png" alt="User Picture" />
+                                : <>
+                                <div onLoad={UserInfo}>
+                                    <div id="layer_button" >
+                                        <img src="/assets/main/user.png" alt="User Picture"/>
+                                    </div>
+                                    <div className="layer" id="layer" >
+                                        <div className="layer_content">
+                                            키키
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                </>
                             }
                             </div>
                         </button>
@@ -57,4 +74,5 @@ function MainHeader(){
         </>
     )
 }
+
 export default MainHeader;

@@ -677,11 +677,12 @@ body.dark .sidebar header .toggle{
     display: inline-block;
     vertical-align: middle;
     height: 100%;
+    left: 100px;
 }
 .layer_content{
     display: inline-block;
     vertical-align: middle;
-    width: 200px;
+    width: 400px;
     height: 300px;
     background-color: #fff;
 }
