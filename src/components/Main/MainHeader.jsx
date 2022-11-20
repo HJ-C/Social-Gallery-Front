@@ -57,10 +57,25 @@ function MainHeader(){
                                     <div id="layer_button" >
                                         <img src="/assets/main/user.png" alt="User Picture"/>
                                     </div>
+                                    
                                     <div className="layer" id="layer" >
-                                        <div className="layer_content">
-                                            키키
+                                    <div className="popup-wrap" id="popup"> 
+                                        <div className="popup">
+                                        <div className="popup-head">
+                                            <span className="head-title">개인정보</span>
                                         </div>
+                                        <div className="popup-body">
+                                            <div className="body-content">
+                                            <div className="body-titlebox">
+                                                <h1>개인 정보</h1>
+                                            </div>
+                                            <div className="body-contentbox">
+                                                <p> 모달 내용칸 </p>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                                 
