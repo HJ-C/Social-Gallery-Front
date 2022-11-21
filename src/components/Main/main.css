@@ -676,9 +676,9 @@ body.dark .sidebar header .toggle{
     right:0;
     bottom:0;
     top: 0;             
-    display:none; 
     display:flex;
-    padding: 20px; 
+    padding: 20px;
+    display: none;
   }
   .popup{
     width:100%;             

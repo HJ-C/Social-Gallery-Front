@@ -32,13 +32,6 @@ function Content({i}){
 
     let dispatch = useDispatch()
 
-    
-    // const userData = ()=>{
-    //     axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
-    //     .then(res=>{
-    //         dispatch(setUserData(res.data.data))
-    //     })
-    // }
 
     // 댓글
     const [comment, setComments] = useState([])

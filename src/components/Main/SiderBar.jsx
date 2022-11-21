@@ -10,6 +10,7 @@ import { setPostAll } from '../../store/Store';
 function Sidebar(){
 
     const searchTitle = useSelector((state)=>state.searchImg.searchList)
+    const userData = useSelector((state)=>state.userData.userDataList)
     const dispatch = useDispatch()
 
 
@@ -72,7 +73,7 @@ function Sidebar(){
 				</span>
                         <div className="text logo-text">
                             {/* username */}
-                            {/* <span className="name">어서오세요</span> */}
+                            <span className="name">{userData.username}님</span>
                             <span className="profession">Welcome</span>
                         </div>
                     </div>
