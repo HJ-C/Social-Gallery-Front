@@ -53,32 +53,38 @@ function MainHeader(){
                                 ? <Link to = "/login"><span className="material-icons outlined">
                                 login</span></Link>
                                 : <>
-                                <div onLoad={UserInfo}>
+                               <div onLoad={UserInfo}>
                                     <div id="layer_button" >
                                         <img src="/assets/main/user.png" alt="User Picture"/>
                                     </div>
                                     
-                                    <div className="layer" id="layer" >
-                                    <div className="popup-wrap" id="popup"> 
-                                        <div className="popup">
-                                        <div className="popup-head">
-                                            <span className="head-title">개인정보</span>
-                                        </div>
-                                        <div className="popup-body">
-                                            <div className="body-content">
-                                            <div className="body-titlebox">
+                                    <div class="popup-wrap" id="popup"> 
+                                    <div class="popup">
+                                    <div class="popup-head">	
+                                        <span class="head-title">Your Profile</span>
+                                    </div>
+                                    <div class="popup-body">	
+                                        <div class="body-content">
+                                            <div class="body-titlebox">
                                                 <h1>개인 정보</h1>
                                             </div>
-                                            <div className="body-contentbox">
-                                                <p> 모달 내용칸 </p>
+                                            <div class="body-contentbox">
+                                                <p>Name : choi</p>
+                                                <p>E-mail : swch56@social.com</p>
+                                                <p>phone: 010-1234-5678</p>
                                             </div>
-                                            </div>
+                                            
                                         </div>
-                                        </div>
+                                    </div>
+                                    <div class="popup-foot">
+                                        <span class="pop-btn confirm" >확인</span>
+                                        <span class="pop-btn close" onClick={()=>{
+                                            alert('정말로 삭제 하시겠습니까')
+                                        }}>회원 탈퇴</span>
                                     </div>
                                     </div>
                                 </div>
-                                
+                                </div>
                                 </>
                             }
                             </div>
