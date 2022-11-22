@@ -4,7 +4,7 @@ import {Link, useLocation, useParams} from 'react-router-dom'
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import {compareArraysAsSet} from "@testing-library/jest-dom/dist/utils";
-
+import { useEffect } from "react";
 
 function Login() {
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ function Login() {
   const [rgPw, setRgPw] = useState('');
   const [rgName, setRgName] = useState('');
   const [rgTel, setRgTel] = useState('');
-
+  const [checkBox, setCheckBox] = useState(false)
 
 
   // const [id,setId] = useState('') id 불러오기
@@ -99,7 +99,7 @@ function Login() {
       email: rgEmail,
       password: rgPw,
       username : rgName,
-      tel : rgTel
+      phone : rgTel
     },{
       headers: {
         'Content-Type': 'application/json',
@@ -117,7 +117,9 @@ function Login() {
     });
   }
 
-  
+  // check box true
+
+
 	return ( 
 		<>
     <div className="container" id="container" onLoad={Toggle}>
@@ -173,13 +175,18 @@ function Login() {
                   />
               </div>
 
-              <button
+                <button
                 type="submit"
                 onClick={signUp}
                 >Sign up</button>
               <p>
                 <span>Already have an account?</span>
                 <b id="sign-in">&nbsp;Sign in here</b>
+              </p>
+              <p>
+                <input type="checkbox" id="chk"/>&nbsp;
+                <span>Consent to entrust handling of personal information</span>
+                <b>&nbsp; <Link to ="/login/privacy">더보기</Link></b>
               </p>
             </form>
           </div>
@@ -244,10 +251,7 @@ function Login() {
                 <span> Don't have an account? </span>
                 <b id="sign-up">&nbsp; Sign up here</b>
               </p>
-              <p>
-                <span>Consent to entrust handling of personal information</span>
-                <b id="sign-up">&nbsp; <Link to ="/login/privacy">Click here</Link></b>
-              </p>
+              
             </div>
           </div>
 

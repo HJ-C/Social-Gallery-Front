@@ -60,7 +60,7 @@ function Content({i}){
         setComments(e.currentTarget.value)
     }
 
-    // User
+    // User Data
     useEffect(()=>{
         axios.get(base_URL + "/findUserByEmail/" + localStorage.getItem("user"))
             .then(res=>{

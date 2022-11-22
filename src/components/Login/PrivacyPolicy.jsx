@@ -21,41 +21,41 @@ return (
                     <li>이용약관, 개인정보 수집 및 이용,
                         위치정보 이용약관(선택), 프로모션 안내
                         메일 수신(선택)에 모두 동의합니다.</li>
-                    <li className="checkAllBtn">
+                    {/* <li className="checkAllBtn">
                         <input type="checkbox" name="chkAll" id="chk" onClick={allselect} />
-                    </li>
+                    </li> */}
                 </ul>
             </li>
             <li className="checkBox check02">
                 <ul className="clearfix">
                     <li>이용약관 동의(필수)</li>
-                    <li className="checkBtn">
+                    {/* <li className="checkBtn">
                         <input type="checkbox" name="chk" />
-                    </li>
+                    </li> */}
                 </ul>
                 <textarea name="" id="">여러분을 환영합니다.
 Social Gallery 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Social Gallery 서비스의 이용과 관련하여 Social Gallery 서비스를 제공하는 Social Gallery와 이를 이용하는 Social Gallery 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 Social Gallery 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-       </textarea>
+                </textarea>
             </li>
             <li className="checkBox check03">
                 <ul className="clearfix">
                     <li>개인정보 수집 및 이용에 대한 안내(필수)</li>
-                    <li className="checkBtn">
+                    {/* <li className="checkBtn">
                         <input type="checkbox" name="chk" />
-                    </li>
+                    </li> */}
                 </ul>
 
                 <textarea name="" id="">여러분을 환영합니다.
 								Social Gallery 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Social Gallery 서비스의 이용과 관련하여 Social Gallery 서비스를 제공하는 Social Gallery와 이를 이용하는 Social Gallery 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 Social Gallery 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-       </textarea>
+                </textarea>
             </li>
 						
             <li className="checkBox check03">
                 <ul className="clearfix">
-                    <li>위치정보 이용약관 동의(선택)</li>
-                    <li className="checkBtn">
+                    <li>위치정보 이용약관 동의(필수)</li>
+                    {/* <li className="checkBtn">
                         <input type="checkbox" name="chk" />
-                    </li>
+                    </li> */}
                 </ul>
 
                 <textarea name="" id="">여러분을 환영합니다.
@@ -66,9 +66,9 @@ Social Gallery 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔�
             <li className="checkBox check04">
                 <ul className="clearfix">
                     <li>이벤트 등 프로모션 알림 메일 수신(선택)</li>
-                    <li className="checkBtn">
+                    {/* <li className="checkBtn">
                         <input type="checkbox" name="chk" />
-                    </li>
+                    </li> */}
                 </ul>
 
             </li>
@@ -77,9 +77,12 @@ Social Gallery 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔�
             <li><button className="fpmgBt1" onClick={()=>{
 							navigate('/login')
 						}}>비동의</button></li>
-            <li><button className="fpmgBt2">동의</button></li>
+            <li><button className="fpmgBt2" onClick={()=>{
+                navigate('/login')
+            }}>확인</button></li>
         </ul>
     </form>
+
 </>
 )
 }

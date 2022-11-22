@@ -9,10 +9,16 @@ import UserInfo from './UserInfo';
 function MainHeader(){
 
     const isLogin = useSelector((state)=>state.isLogin.isLoginList)
+    let users = useSelector((state)=>state.userData.userDataList)
     const userData = useSelector((state)=>state.userData.userDataList)
     const dispatch = useDispatch()
-
+    
     const base_URL = 'http://localhost:8080'
+
+    const headers = {
+        'Content-type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem("token")
+    }
 
     // isLogin
     useEffect(()=>{
@@ -23,7 +29,13 @@ function MainHeader(){
     },[])
 
 
-
+    // 회원삭제
+    const deleteUser= ()=>{
+        axios.delete(base_URL + '/api/users/userDelete/' + users.id ,{headers})
+        .then(()=>{
+            window.location.reload('')
+        })
+    }
     return(
         <>
             <header className="header" >
@@ -78,9 +90,7 @@ function MainHeader(){
                                     </div>
                                     <div className="popup-foot">
                                         <span className="pop-btn confirm" >확인</span>
-                                        <span className="pop-btn close" onClick={()=>{
-                                            alert('정말로 삭제 하시겠습니까')
-                                        }}>회원 탈퇴</span>
+                                        <span className="pop-btn close" onClick={deleteUser}>회원 탈퇴</span>
                                     </div>
                                     </div>
                                 </div>

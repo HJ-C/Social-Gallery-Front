@@ -11,6 +11,7 @@ function Sidebar(){
 
     const searchTitle = useSelector((state)=>state.searchImg.searchList)
     const userData = useSelector((state)=>state.userData.userDataList)
+    const isLogin = useSelector((state)=>state.isLogin.isLoginList)
     const dispatch = useDispatch()
 
 
@@ -73,8 +74,17 @@ function Sidebar(){
 				</span>
                         <div className="text logo-text">
                             {/* username */}
-                            <span className="name">{userData.username}님</span>
-                            <span className="profession">Welcome</span>
+                            <span className="name">
+                                {
+                                    isLogin === false
+                                    ? <div>로그인을 해주세요.</div>
+                                    :<>
+                                    <span>{userData.username}님</span>
+                                    <span className="profession">Welcome</span>
+                                    </> 
+                                    
+                                }
+                            </span>
                         </div>
                     </div>
                     <i className="bx bx-chevron-right toggle" id="close" onClick={(e)=>{
