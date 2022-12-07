@@ -5,6 +5,7 @@ import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import {compareArraysAsSet} from "@testing-library/jest-dom/dist/utils";
 import { useEffect } from "react";
+import { useCallback } from "react";
 
 function Login() {
   const navigate = useNavigate()
@@ -17,8 +18,54 @@ function Login() {
   const [rgPw, setRgPw] = useState('');
   const [rgName, setRgName] = useState('');
   const [rgTel, setRgTel] = useState('');
-  const [checkBox, setCheckBox] = useState(false)
 
+
+  const [isName, setIsName] = useState(false)
+  const [isEmail, setIsEmail] = useState(false)
+  const [isPassword, setIsPassword] = useState(false)
+
+  // Check mail,pw
+
+  // // 이름
+  // const onChangeName = (e) => {
+    
+  //   if (e.target.value.length < 4 || e.target.value.length > 8) {
+  //     alert('4글자 이상 8글자 이내로 입력해주세요.')
+  //     setIsName(false)
+  //   } else {
+  //     //제대로 입력했을때
+  //     setIsName(true)
+  //   }
+  // }
+
+  // // 📍이메일
+  // const onChangeEmail = (e) => {
+
+  //   const emailRegex =
+  //     /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+
+
+  //   if (!emailRegex.test(e.target.value)) {
+  //     alert('올바른 이메일 형식이 아닙니다.')
+  //     setIsEmail(false)
+  //   } else {
+  //     //제대로 입력했을때
+  //     setIsEmail(true)
+  //   }
+  // }
+
+  // // 📍비밀번호
+  // const onChangePassword = (e) => {
+  //   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{4,25}$/
+
+  //   if (!passwordRegex.test(e.target.value)) {
+  //     alert('올바른 비밀번호 형식이 아닙니다.')
+  //     setIsPassword(false)
+  //   } else {
+  //     //제대로 입력했을때
+  //     setIsPassword(true)
+  //   }
+  // }
 
   // const [id,setId] = useState('') id 불러오기
   let usersId = useState('');
@@ -33,22 +80,21 @@ function Login() {
     e.preventDefault();
   }
 
-  // 회원가입 Form
-  const onRgEmailHandler = (e) => {
-      setRgEmail(e.currentTarget.value)
-  }
+ // 회원가입 Form
+ const onRgEmailHandler = (e) => {
+  setRgEmail(e.currentTarget.value)
+}
 
-  const onRgPwHandler = (e) => {
-      setRgPw(e.currentTarget.value)
-  }
+const onRgPwHandler = (e) => {
+  setRgPw(e.currentTarget.value)
+}
 
-  const onRgNameHandler = (e) => {
-    setRgName(e.currentTarget.value)
-  }
-  const onRgTelHandler = (e) => {
-    setRgTel(e.currentTarget.value)
-  }
-
+const onRgNameHandler = (e) => {
+setRgName(e.currentTarget.value)
+}
+const onRgTelHandler = (e) => {
+setRgTel(e.currentTarget.value)
+}
   const base_url = "http://localhost:8080"
 
 
@@ -112,14 +158,14 @@ function Login() {
       if(res.status === 200){
         alert('회원가입이 되었습니다.')
       }else{
-        alert('다시 시도해주세요.')
+        alert('빈칸을 확인해 주세요.')
       }
     });
   }
 
-  // check box true
 
 
+  
 	return ( 
 		<>
     <div className="container" id="container" onLoad={Toggle}>
@@ -174,7 +220,7 @@ function Login() {
                   onChange={onRgTelHandler}
                   />
               </div>
-
+              {/* (isName && isEmail && isPassword) === true ? signUp() : alert('다시 확인해주세요') */}
                 <button
                 type="submit"
                 onClick={signUp}

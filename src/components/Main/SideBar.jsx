@@ -1,4 +1,4 @@
-import sideToggle from '../Main/SideToggle';
+import sideToggle from './SideToggle';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';

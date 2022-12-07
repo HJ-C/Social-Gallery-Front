@@ -5,12 +5,12 @@ function PrivacyPolicy(){
 	const navigate = useNavigate()
 
 	// 전체선택
-	const allselect = (bool)=>{
-		var chks = document.getElementsByName("chk");
-		for(var i = 0; i < chks.length; i++){
-			chks[i].checked = bool;
-		}
-	}
+	// const allselect = (bool)=>{
+	// 	var chks = document.getElementsByName("chk");
+	// 	for(var i = 0; i < chks.length; i++){
+	// 		chks[i].checked = bool;
+	// 	}
+	// }
 
 return (
 <>

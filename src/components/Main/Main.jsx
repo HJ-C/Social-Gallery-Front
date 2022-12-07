@@ -1,6 +1,6 @@
 
 import Footer from './Footer';
-import Sidebar from './SiderBar';
+import Sidebar from './SideBar';
 import SideMenu from './SideMenu';
 import MainHeader from './MainHeader';
 import Content from './Content';

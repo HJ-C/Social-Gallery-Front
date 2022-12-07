@@ -7,9 +7,10 @@ function UpLoadForm({imgs,setImgs,previewImg,setPreviewImg}) {
 
     const title = useSelector((state)=>state.postTitle.postTitleList)
     const content = useSelector((state)=>state.postContent.postContentList)
+    const userData = useSelector((state)=>state.userData.userDataList)
     const dispatch = useDispatch()
     const [category, setCategory] = useState('')
-
+    
 
     
 
@@ -103,7 +104,7 @@ function UpLoadForm({imgs,setImgs,previewImg,setPreviewImg}) {
                                 <div className="popup_photoinfo">
                                     <div className="photoinfo_name">
                                         <img src="assets/Main/user.png" alt="User Picture" />
-                                        <span>user1</span>
+                                        <span>{userData.username}</span>
                                     </div>
                                     <div className="photoinfo_category" onChange={onHandleCategory}>
                                         <input  type='radio' name='category' value='BROADCAST'/>&nbsp;영화/드라마<br></br>
@@ -124,7 +125,7 @@ function UpLoadForm({imgs,setImgs,previewImg,setPreviewImg}) {
 
                                             <span>Contents</span>
                                         </div>
-                                        <input type="text" id="cont_story" placeholder="내용을 입력해주세요." onChange={onHandlePostComments} />
+                                        <input type="textarea" id="cont_story" placeholder="내용을 입력해주세요." onChange={onHandlePostComments} />
                                     
                                     </div>
                                 </div>

@@ -9,6 +9,7 @@ function EditForm({imgs,setImgs,previewImg,setPreviewImg,i}){
     let postAll= useSelector((state)=>state.postAll.postAllList) 
     const title = useSelector((state)=>state.postTitle.postTitleList)
     const content = useSelector((state)=>state.postContent.postContentList)
+    const userData = useSelector((state)=>state.userData.userDataList)
     const dispatch = useDispatch()
 
     // 미리보기
@@ -100,7 +101,7 @@ function EditForm({imgs,setImgs,previewImg,setPreviewImg,i}){
                         <div className="popup_photoinfo">
                             <div className="photoinfo_name">
                                 <img src="assets/Main/user.png" alt="User Picture" />
-                                <span>user1</span>
+                                <span>{userData.username}</span>
                             </div>
                             <div className="photoinfo_category" onChange={onHandleUpdateCategory}>
                                         <input  type='radio' name='category' value='BROADCAST'/>&nbsp;영화/드라마<br></br>

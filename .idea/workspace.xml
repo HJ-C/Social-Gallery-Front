@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="903a052f-c9fb-4c48-9d2e-de7de064aa75" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/Login/PrivacyPolicy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/PrivacyPolicy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/MainHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/MainHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/SiderBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sideMenu/Broadcast.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sideMenu/Broadcast.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sideMenu/Life.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sideMenu/Life.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sideMenu/Movie.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sideMenu/Movie.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sideMenu/Travel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sideMenu/Travel.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2I63filzSbteoAijOJV2rUdQ2kW" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "yarn"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="903a052f-c9fb-4c48-9d2e-de7de064aa75" name="Changes" comment="" />
+      <created>1669488316903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669488316903</updated>
+      <workItem from="1669488317200" duration="18000" />
+    </task>
+    <servers />
+  </component>
+</project>

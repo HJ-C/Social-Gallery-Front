@@ -36,6 +36,7 @@ function MainHeader(){
             window.location.reload('')
         })
     }
+
     return(
         <>
             <header className="header" >
@@ -90,7 +91,15 @@ function MainHeader(){
                                     </div>
                                     <div className="popup-foot">
                                         <span className="pop-btn confirm" >확인</span>
-                                        <span className="pop-btn close" onClick={deleteUser}>회원 탈퇴</span>
+                                        <span className="pop-btn close" onClick={()=>{
+                                            if (isLogin === false) {
+                                                alert('로그인 후 사용해주세요.')
+                                              } else if (window.confirm("정말 회원탈퇴 하시겠습니까?")) {
+                                                deleteUser()
+                                              } else{
+                                                alert('취소 됐습니다.')
+                                              }
+                                        }}>회원 탈퇴</span>
                                     </div>
                                     </div>
                                 </div>
